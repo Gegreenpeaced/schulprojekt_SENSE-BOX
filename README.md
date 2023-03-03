@@ -1,2 +1,2 @@
 # schulprojekt_OPENSENSE
-Schulprojekt Opensense
+Schulprojekt senseBox:home
