@@ -1,0 +1,25 @@
+site_name: Projektauftrag 1
+dev_addr: '0.0.0.0:80'
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - pymdownx.superfences
+  - pymdownx.details
+  
+theme:
+  name: material
+  language: de
+  font: false
+  favicon: favicon.png
+  logo: favicon.png
+
+site_author: "bszetdd it-systems"
+
+extra_css:
+    - css/extra.css
+    
+nav:
+  - Einleitung: index.md
+  - Aufgaben: aufgaben.md
+  - Impressum: legal/imprint.md
