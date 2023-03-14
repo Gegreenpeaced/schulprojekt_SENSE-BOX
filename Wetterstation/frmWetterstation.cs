@@ -15,15 +15,49 @@ namespace Wetterstation
         public frmWetterstation()
         {
             InitializeComponent();
+            lblInfo.Text = "Keine Fehler!";
+        }
+
+        // Button abfrage Daten
+        private void btnGetData_Click(object sender, EventArgs e)
+        {
+            // try-catch für Debugging
+            try
+            {
+                // Letzte Abfrage schreiben
+                lblInfo.Text = "Letzte Abfrage um: " + DateTime.Now.ToString("hh:mm");
+                // Daten auslesen
+                //tbFrmTemp.Text = WeatherDll.GetTemp();
+                //tbFrmHum.Text = WeatherDll.GetHum();
+                //tbFrmLight.Text = WeatherDll.GetLight();
+                //tbFrmPress.Text = WeatherDll.GetPress();
+
+            }
+            // Catch für geworfene DLL Fehler usw.
+            catch(Exception ex)
+            {
+                string message = "Ein Fehler ist aufgetreten!\n\nBeim Fehler handelt es sich um:\n" + ex;
+                string title = "Fehler!";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
+            }
+
         }
 
 
 
-
+        // Button für Formular schließen
         private void btnClose_Click(object sender, EventArgs e)
         {
-            // Message Box Abfrage adden
-            Application.Exit();
+            // Messagebox Abfrage zum Fenster schliessen
+            string message = "Möchtest du die Anwendung schliessen?";
+            string title = "Anwendung schliessen?";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

@@ -29,25 +29,21 @@ namespace Wetterstation
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSettings = new System.Windows.Forms.Button();
             this.lblFrm1 = new System.Windows.Forms.Label();
-            this.lblFrm2 = new System.Windows.Forms.Label();
+            this.lblTemp = new System.Windows.Forms.Label();
             this.lblHum = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblPress = new System.Windows.Forms.Label();
             this.tbFrmTemp = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnGetData = new System.Windows.Forms.Button();
-            this.tbHum = new System.Windows.Forms.TextBox();
+            this.tbFrmHum = new System.Windows.Forms.TextBox();
+            this.lblUV = new System.Windows.Forms.Label();
+            this.lblLight = new System.Windows.Forms.Label();
+            this.tbFrmPress = new System.Windows.Forms.TextBox();
+            this.tbFrmUV = new System.Windows.Forms.TextBox();
+            this.tbFrmLight = new System.Windows.Forms.TextBox();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // btnSettings
-            // 
-            this.btnSettings.Location = new System.Drawing.Point(12, 415);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(75, 23);
-            this.btnSettings.TabIndex = 0;
-            this.btnSettings.Text = "Settings";
-            this.btnSettings.UseVisualStyleBackColor = true;
             // 
             // lblFrm1
             // 
@@ -59,15 +55,15 @@ namespace Wetterstation
             this.lblFrm1.TabIndex = 1;
             this.lblFrm1.Text = "Wetterstation:";
             // 
-            // lblFrm2
+            // lblTemp
             // 
-            this.lblFrm2.AutoSize = true;
-            this.lblFrm2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFrm2.Location = new System.Drawing.Point(12, 97);
-            this.lblFrm2.Name = "lblFrm2";
-            this.lblFrm2.Size = new System.Drawing.Size(81, 16);
-            this.lblFrm2.TabIndex = 2;
-            this.lblFrm2.Text = "Temperatur:";
+            this.lblTemp.AutoSize = true;
+            this.lblTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTemp.Location = new System.Drawing.Point(12, 102);
+            this.lblTemp.Name = "lblTemp";
+            this.lblTemp.Size = new System.Drawing.Size(81, 16);
+            this.lblTemp.TabIndex = 2;
+            this.lblTemp.Text = "Temperatur:";
             // 
             // lblHum
             // 
@@ -79,20 +75,20 @@ namespace Wetterstation
             this.lblHum.TabIndex = 3;
             this.lblHum.Text = "Humidity:";
             // 
-            // label2
+            // lblPress
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 162);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 16);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Temperatur:";
+            this.lblPress.AutoSize = true;
+            this.lblPress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPress.Location = new System.Drawing.Point(12, 154);
+            this.lblPress.Name = "lblPress";
+            this.lblPress.Size = new System.Drawing.Size(65, 16);
+            this.lblPress.TabIndex = 4;
+            this.lblPress.Text = "Pressure:";
             // 
             // tbFrmTemp
             // 
             this.tbFrmTemp.Enabled = false;
-            this.tbFrmTemp.Location = new System.Drawing.Point(99, 96);
+            this.tbFrmTemp.Location = new System.Drawing.Point(99, 101);
             this.tbFrmTemp.Name = "tbFrmTemp";
             this.tbFrmTemp.ReadOnly = true;
             this.tbFrmTemp.Size = new System.Drawing.Size(100, 20);
@@ -100,9 +96,9 @@ namespace Wetterstation
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(412, 415);
+            this.btnClose.Location = new System.Drawing.Point(257, 415);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(230, 23);
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -110,36 +106,99 @@ namespace Wetterstation
             // 
             // btnGetData
             // 
-            this.btnGetData.Location = new System.Drawing.Point(99, 415);
+            this.btnGetData.Location = new System.Drawing.Point(12, 415);
             this.btnGetData.Name = "btnGetData";
-            this.btnGetData.Size = new System.Drawing.Size(302, 23);
+            this.btnGetData.Size = new System.Drawing.Size(239, 23);
             this.btnGetData.TabIndex = 7;
             this.btnGetData.Text = "Daten Abfragen";
             this.btnGetData.UseVisualStyleBackColor = true;
+            this.btnGetData.Click += new System.EventHandler(this.btnGetData_Click);
             // 
-            // tbHum
+            // tbFrmHum
             // 
-            this.tbHum.Enabled = false;
-            this.tbHum.Location = new System.Drawing.Point(99, 127);
-            this.tbHum.Name = "tbHum";
-            this.tbHum.ReadOnly = true;
-            this.tbHum.Size = new System.Drawing.Size(100, 20);
-            this.tbHum.TabIndex = 8;
+            this.tbFrmHum.Enabled = false;
+            this.tbFrmHum.Location = new System.Drawing.Point(99, 127);
+            this.tbFrmHum.Name = "tbFrmHum";
+            this.tbFrmHum.ReadOnly = true;
+            this.tbFrmHum.Size = new System.Drawing.Size(100, 20);
+            this.tbFrmHum.TabIndex = 8;
+            // 
+            // lblUV
+            // 
+            this.lblUV.AutoSize = true;
+            this.lblUV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUV.Location = new System.Drawing.Point(12, 180);
+            this.lblUV.Name = "lblUV";
+            this.lblUV.Size = new System.Drawing.Size(66, 16);
+            this.lblUV.TabIndex = 9;
+            this.lblUV.Text = "UV-Index:";
+            // 
+            // lblLight
+            // 
+            this.lblLight.AutoSize = true;
+            this.lblLight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLight.Location = new System.Drawing.Point(12, 206);
+            this.lblLight.Name = "lblLight";
+            this.lblLight.Size = new System.Drawing.Size(71, 16);
+            this.lblLight.TabIndex = 10;
+            this.lblLight.Text = "Lichtfaktor:";
+            // 
+            // tbFrmPress
+            // 
+            this.tbFrmPress.Enabled = false;
+            this.tbFrmPress.Location = new System.Drawing.Point(99, 153);
+            this.tbFrmPress.Name = "tbFrmPress";
+            this.tbFrmPress.ReadOnly = true;
+            this.tbFrmPress.Size = new System.Drawing.Size(100, 20);
+            this.tbFrmPress.TabIndex = 11;
+            // 
+            // tbFrmUV
+            // 
+            this.tbFrmUV.Enabled = false;
+            this.tbFrmUV.Location = new System.Drawing.Point(99, 179);
+            this.tbFrmUV.Name = "tbFrmUV";
+            this.tbFrmUV.ReadOnly = true;
+            this.tbFrmUV.Size = new System.Drawing.Size(100, 20);
+            this.tbFrmUV.TabIndex = 12;
+            // 
+            // tbFrmLight
+            // 
+            this.tbFrmLight.Enabled = false;
+            this.tbFrmLight.Location = new System.Drawing.Point(99, 205);
+            this.tbFrmLight.Name = "tbFrmLight";
+            this.tbFrmLight.ReadOnly = true;
+            this.tbFrmLight.Size = new System.Drawing.Size(100, 20);
+            this.tbFrmLight.TabIndex = 13;
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.Location = new System.Drawing.Point(12, 396);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(118, 16);
+            this.lblInfo.TabIndex = 14;
+            this.lblInfo.Text = "Letzte Abfrage um:";
             // 
             // frmWetterstation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 450);
-            this.Controls.Add(this.tbHum);
+            this.Controls.Add(this.lblInfo);
+            this.Controls.Add(this.tbFrmLight);
+            this.Controls.Add(this.tbFrmUV);
+            this.Controls.Add(this.tbFrmPress);
+            this.Controls.Add(this.lblLight);
+            this.Controls.Add(this.lblUV);
+            this.Controls.Add(this.tbFrmHum);
             this.Controls.Add(this.btnGetData);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.tbFrmTemp);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblPress);
             this.Controls.Add(this.lblHum);
-            this.Controls.Add(this.lblFrm2);
+            this.Controls.Add(this.lblTemp);
             this.Controls.Add(this.lblFrm1);
-            this.Controls.Add(this.btnSettings);
             this.Name = "frmWetterstation";
             this.Text = "Hauptformular";
             this.ResumeLayout(false);
@@ -148,16 +207,20 @@ namespace Wetterstation
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Label lblFrm1;
-        private System.Windows.Forms.Label lblFrm2;
+        private System.Windows.Forms.Label lblTemp;
         private System.Windows.Forms.Label lblHum;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblPress;
         private System.Windows.Forms.TextBox tbFrmTemp;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnGetData;
-        private System.Windows.Forms.TextBox tbHum;
+        private System.Windows.Forms.TextBox tbFrmHum;
+        private System.Windows.Forms.Label lblUV;
+        private System.Windows.Forms.Label lblLight;
+        private System.Windows.Forms.TextBox tbFrmPress;
+        private System.Windows.Forms.TextBox tbFrmUV;
+        private System.Windows.Forms.TextBox tbFrmLight;
+        private System.Windows.Forms.Label lblInfo;
     }
 }
 
