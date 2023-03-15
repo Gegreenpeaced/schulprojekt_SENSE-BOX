@@ -3,9 +3,10 @@ import serial
 from serial.tools import list_ports 
 import json 
 from datetime import datetime 
+import requests
 
-#Pfad zur Datei in der Wetter-Daten zwischengespeichert werden
-PATH = "readout.json"
+#URL zur API
+URL = "http://65.109.108.200/api/v1/senseBox/weather"
 
 #Sucht seriellen Port mit welchem die senseBox verbunden ist
 def find_com_port():
@@ -23,17 +24,16 @@ def find_com_port():
     return None
 
 
-#Speichert die Wetter-Daten in Datei zwischen für Abrufen der API 
-def save_data(data_set):
-    #Umwandeln des Dictionaries zu JSON
-    content = json.dumps(data_set)        
+#Sendet die Wetter-Daten an die API
+def upload_data(data_set):
+    res = requests.post(url=URL, data=data_set)
 
-    #Öffnen der Datei im Schreibmodus, Beschreiben mit neuen Daten, Schließen des Dateizugriffs
-    file = open(PATH,"w")
-    file.write(content)
-    file.close()
-
-    print(f"[{datetime.now().strftime('%d-%m-%Y %H:%M:%S')}] Daten wurden aktualisiert")
+    print(res.text)
+    print(res.status_code)
+    if(res.status_code == 200):
+        print(f"[{datetime.now().strftime('%d-%m-%Y %H:%M:%S')}] Daten wurden abgesendet")
+    else:
+        print(f"[{datetime.now().strftime('%d-%m-%Y %H:%M:%S')}] Daten konnten nicht abgesendet werden")
 
 
 #Beginnt auf Daten der senseBox zu warten
@@ -65,7 +65,7 @@ def start_listening():
 
         #Wenn letzte Zeile des Datensatzes erreicht:
         if(data.startswith("Beleuchtungsstaerke:")):
-            save_data(data_set)
+            upload_data(data_set)
 
             #Zurücksetzen der zwischengespeicherten Daten
             data_set = {}
