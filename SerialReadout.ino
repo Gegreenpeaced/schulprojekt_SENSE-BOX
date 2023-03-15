@@ -66,7 +66,7 @@ void loop()
   Serial.println(H,1);
   Serial.print("Luftdruck:"); 
   Serial.println(P, 2);
-  Serial.print("UV-Strahlung:"); 
+  Serial.print("UVStrahlung:"); 
   Serial.println(uv, DEC);
   Serial.print("Beleuchtungsstaerke:");
   Serial.println(lux, DEC);	
