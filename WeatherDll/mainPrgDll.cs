@@ -13,11 +13,11 @@ namespace WeatherDll
     // WeatherData Objekt für das Parsen an das Formular
     public class WeatherData
     {
-        float Temp;
-        float Press;
-        float Hum;
-        int UV;
-        int Light;
+        public float Temp;
+        public float Press;
+        public float Hum;
+        public int UV;
+        public float Light;
     }
     
 
@@ -42,7 +42,35 @@ namespace WeatherDll
                     // JSON-Response Deserialize
                     WeatherData apiresponse = JsonConvert.DeserializeObject<WeatherData>(weatherResponse);
 
-                    if()
+                    // Light Sensor auf Gültigkeit prüfen.
+                    if (apiresponse.Temp < -40 && apiresponse.Temp > 100)
+                    {
+                        throw new SensorException($"Humidity Sensor gibt falschen Wert!\nWert ist:{apiresponse.Temp}");
+                    }
+
+                    // Light Sensor auf Gültigkeit prüfen.
+                    if (apiresponse.Press < 100 && apiresponse.Press > 1500)
+                    {
+                        throw new SensorException($"Humidity Sensor gibt falschen Wert!\nWert ist:{apiresponse.Press}");
+                    }
+
+                    // Hum Sensor auf Gültigkeit prüfen(Unter 0 und ü. 100)
+                    if (apiresponse.Hum < 0 && apiresponse.Hum > 100)
+                    {
+                        throw new SensorException($"Humidity Sensor gibt falschen Wert!\nWert ist:{apiresponse.Hum}");
+                    }
+
+                    // UV Sensor auf Gültigkeit prüfen. (Unter 0 und ü. 100)
+                    if (apiresponse.UV < 0 && apiresponse.UV > 100)
+                    {
+                        throw new SensorException($"UV Sensor gibt falschen Wert!\nWert ist:{apiresponse.UV}");
+                    }
+
+                    // Light Sensor auf Gültigkeit prüfen.
+                    if (apiresponse.Light < 0 && apiresponse.Light > 500000)
+                    {
+                        throw new SensorException($"Humidity Sensor gibt falschen Wert!\nWert ist:{apiresponse.Light}");
+                    }
 
                     // Objekt Return
                     return apiresponse;
@@ -50,12 +78,11 @@ namespace WeatherDll
             }
             catch(WebException ex)
             {
-
                 throw new NetworkParsingException(ex.ToString());
             }
             catch(Exception ex)
             {
-                
+                throw new Exception(ex.ToString());
             }
         }
     }
