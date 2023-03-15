@@ -28,8 +28,6 @@ def find_com_port():
 def upload_data(data_set):
     res = requests.post(url=URL, data=data_set)
 
-    print(res.text)
-    print(res.status_code)
     if(res.status_code == 200):
         print(f"[{datetime.now().strftime('%d-%m-%Y %H:%M:%S')}] Daten wurden abgesendet")
     else:
