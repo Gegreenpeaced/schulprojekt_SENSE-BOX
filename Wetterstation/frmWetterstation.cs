@@ -29,10 +29,20 @@ namespace Wetterstation
                 lblInfo.Text = "Letzte Abfrage um: " + DateTime.Now.ToString("hh:mm");
 
 
-                // To Do -> Get Weather Data
-                // Daten auslesen
+                // Klasse von eingebundener DLL erstellen
+                mainPrgDll wetterdatenAPI = new mainPrgDll();
 
-                //Get Weather Data
+                // Wettedaten holen - Methode aufrufen, in Objekt schreiben
+
+                WeatherData weatherData = wetterdatenAPI.GetData("https://example.example");
+
+                // geholte Daten in Textbox schreiben.
+
+                tbFrmHum.Text = weatherData.Luftfeuchtigkeit.ToString() + " %";
+                tbFrmLight.Text = weatherData.Beleuchtungsstaerke.ToString() + " lx";
+                tbFrmPress.Text = weatherData.Luftdruck.ToString() + " hPa";
+                tbFrmTemp.Text = weatherData.Temperatur.ToString() + " °C";
+                tbFrmUV.Text = weatherData.UVStrahlung.ToString() + " µW/cm";
 
             }
             // Catch für geworfene DLL Fehler usw.
