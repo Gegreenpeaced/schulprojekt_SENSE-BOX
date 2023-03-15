@@ -84,19 +84,5 @@ void scan(void)
   {
     Wire.beginTransmission(address);
     error = Wire.endTransmission();
- 
-    if(error == 0)
-    {
-      if(address<16)
-        Serial.print("0");
-    }
-    else if(error==4)
-    {
-      Serial.print("Fehler: 0x");
-      if(address<16)
-        Serial.print("0");
-      Serial.println(address,HEX);
-    }
   }
-  Serial.println("");
 }
