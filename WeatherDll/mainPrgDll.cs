@@ -13,14 +13,13 @@ namespace WeatherDll
     // WeatherData Objekt für das Parsen an das Formular
     public class WeatherData
     {
-        public float Temp;
-        public float Press;
-        public float Hum;
-        public int UV;
-        public float Light;
+        public float Temperatur;
+        public float Luftdruck;
+        public float Luftfeuchtigkeit;
+        public int UVStrahlung;
+        public float Beleuchtungsstaerke;
     }
     
-
     public class mainPrgDll
     {
 
@@ -42,35 +41,39 @@ namespace WeatherDll
                     // JSON-Response Deserialize
                     WeatherData apiresponse = JsonConvert.DeserializeObject<WeatherData>(weatherResponse);
 
+
+
                     // Light Sensor auf Gültigkeit prüfen.
-                    if (apiresponse.Temp < -40 && apiresponse.Temp > 100)
+                    if (apiresponse.Temperatur < -40 && apiresponse.Temperatur > 100)
                     {
-                        throw new SensorException($"Humidity Sensor gibt falschen Wert!\nWert ist:{apiresponse.Temp}");
+                        throw new SensorException($"Humidity Sensor gibt falschen Wert!\nWert ist:{apiresponse.Temperatur}");
                     }
 
                     // Light Sensor auf Gültigkeit prüfen.
-                    if (apiresponse.Press < 100 && apiresponse.Press > 1500)
+                    if (apiresponse.Luftdruck < 100 && apiresponse.Luftdruck > 1500)
                     {
-                        throw new SensorException($"Humidity Sensor gibt falschen Wert!\nWert ist:{apiresponse.Press}");
+                        throw new SensorException($"Humidity Sensor gibt falschen Wert!\nWert ist:{apiresponse.Luftdruck}");
                     }
 
                     // Hum Sensor auf Gültigkeit prüfen(Unter 0 und ü. 100)
-                    if (apiresponse.Hum < 0 && apiresponse.Hum > 100)
+                    if (apiresponse.Luftfeuchtigkeit < 0 && apiresponse.Luftfeuchtigkeit > 100)
                     {
-                        throw new SensorException($"Humidity Sensor gibt falschen Wert!\nWert ist:{apiresponse.Hum}");
+                        throw new SensorException($"Humidity Sensor gibt falschen Wert!\nWert ist:{apiresponse.Luftfeuchtigkeit}");
                     }
 
                     // UV Sensor auf Gültigkeit prüfen. (Unter 0 und ü. 100)
-                    if (apiresponse.UV < 0 && apiresponse.UV > 100)
+                    if (apiresponse.UVStrahlung < 0 && apiresponse.UVStrahlung > 100)
                     {
-                        throw new SensorException($"UV Sensor gibt falschen Wert!\nWert ist:{apiresponse.UV}");
+                        throw new SensorException($"UV Sensor gibt falschen Wert!\nWert ist:{apiresponse.UVStrahlung}");
                     }
 
                     // Light Sensor auf Gültigkeit prüfen.
-                    if (apiresponse.Light < 0 && apiresponse.Light > 500000)
+                    if (apiresponse.Beleuchtungsstaerke < 0 && apiresponse.Beleuchtungsstaerke > 500000)
                     {
-                        throw new SensorException($"Humidity Sensor gibt falschen Wert!\nWert ist:{apiresponse.Light}");
+                        throw new SensorException($"Humidity Sensor gibt falschen Wert!\nWert ist:{apiresponse.Beleuchtungsstaerke}");
                     }
+
+
 
                     // Objekt Return
                     return apiresponse;
