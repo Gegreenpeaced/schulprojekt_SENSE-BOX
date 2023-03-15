@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WeatherDll;
 
 namespace Wetterstation
 {
@@ -26,11 +27,12 @@ namespace Wetterstation
             {
                 // Letzte Abfrage schreiben
                 lblInfo.Text = "Letzte Abfrage um: " + DateTime.Now.ToString("hh:mm");
+
+
+                // To Do -> Get Weather Data
                 // Daten auslesen
-                //tbFrmTemp.Text = WeatherDll.GetTemp();
-                //tbFrmHum.Text = WeatherDll.GetHum();
-                //tbFrmLight.Text = WeatherDll.GetLight();
-                //tbFrmPress.Text = WeatherDll.GetPress();
+
+                //Get Weather Data
 
             }
             // Catch für geworfene DLL Fehler usw.
