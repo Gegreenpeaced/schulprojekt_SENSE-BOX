@@ -22,38 +22,48 @@ namespace Wetterstation
         // Button abfrage Daten
         private void btnGetData_Click(object sender, EventArgs e)
         {
-            // try-catch für Debugging
-            try
+            // Abfrage: Ist IP Feld leer?
+            if (string.IsNullOrEmpty(tbapiIP.Text))
             {
-                // Letzte Abfrage schreiben
-                lblInfo.Text = "Letzte Abfrage um: " + DateTime.Now.ToString("hh:mm");
-
-
-                // Klasse von eingebundener DLL erstellen
-                mainPrgDll wetterdatenAPI = new mainPrgDll();
-
-                // Wettedaten holen - Methode aufrufen, in Objekt schreiben
-
-                WeatherData weatherData = wetterdatenAPI.GetData("https://example.example");
-
-                // geholte Daten in Textbox schreiben.
-
-                tbFrmHum.Text = weatherData.Luftfeuchtigkeit.ToString() + " %";
-                tbFrmLight.Text = weatherData.Beleuchtungsstaerke.ToString() + " lx";
-                tbFrmPress.Text = weatherData.Luftdruck.ToString() + " hPa";
-                tbFrmTemp.Text = weatherData.Temperatur.ToString() + " °C";
-                tbFrmUV.Text = weatherData.UVStrahlung.ToString() + " µW/cm";
-
-            }
-            // Catch für geworfene DLL Fehler usw.
-            catch(Exception ex)
-            {
-                string message = "Ein Fehler ist aufgetreten!\n\nBeim Fehler handelt es sich um:\n" + ex;
-                string title = "Fehler!";
+                string message = "Bitte füge eine gültige IP-Adresse im Formular ein.";
+                string title = "Feld leer!";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
             }
+            else
+            {
+                // try-catch für Debugging
+                try
+                {
+                    // Letzte Abfrage schreiben
+                    lblInfo.Text = "Letzte Abfrage um: " + DateTime.Now.ToString("hh:mm");
 
+
+                    // Klasse von eingebundener DLL erstellen
+                    mainPrgDll wetterdatenAPI = new mainPrgDll();
+
+                    // Wettedaten holen - Methode aufrufen, in Objekt schreiben
+
+                    WeatherData weatherData = wetterdatenAPI.GetData(tbapiIP.Text);
+
+                    // geholte Daten in Textbox schreiben.
+
+                    tbFrmHum.Text = weatherData.Luftfeuchtigkeit.ToString() + " %";
+                    tbFrmLight.Text = weatherData.Beleuchtungsstaerke.ToString() + " lx";
+                    tbFrmPress.Text = weatherData.Luftdruck.ToString() + " hPa";
+                    tbFrmTemp.Text = weatherData.Temperatur.ToString() + " °C";
+                    tbFrmUV.Text = weatherData.UVStrahlung.ToString() + " µW/cm";
+
+                }
+                // Catch für geworfene DLL Fehler usw.
+                catch (Exception ex)
+                {
+                    string message = "Ein Fehler ist aufgetreten!\n\nBeim Fehler handelt es sich um:\n" + ex;
+                    string title = "Fehler!";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
+                }
+            }
         }
 
 
