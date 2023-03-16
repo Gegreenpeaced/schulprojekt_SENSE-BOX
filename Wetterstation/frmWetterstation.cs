@@ -22,7 +22,10 @@ namespace Wetterstation
             InitializeComponent();
             lblInfo.Text = "Keine Fehler!";
             cbDataSource.SelectedIndex = 0;
-            
+
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+
         }
 
         // Methode für Comboboxindexänderung
