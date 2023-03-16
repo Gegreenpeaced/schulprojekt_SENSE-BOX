@@ -13,17 +13,40 @@ namespace Wetterstation
 {
     public partial class frmWetterstation : Form
     {
+        // Variablen Initialisierung
+        public string apiIP;
+
+        // Formularkonstruktor
         public frmWetterstation()
         {
             InitializeComponent();
             lblInfo.Text = "Keine Fehler!";
+            cbDataSource.SelectedIndex = 0;
+            
+        }
+
+        // Methode für Comboboxindexänderung
+        private void cbDataSourceIndexChange(object sender, EventArgs e)
+        {
+            if(cbDataSource.SelectedIndex == 0)
+            {
+                tbapiIP.Visible = false;
+                lblIP.Visible = false;
+                apiIP = "http://api.norku.de/api/v1/senseBox/weather";
+            }
+            if(cbDataSource.SelectedIndex == 1)
+            {
+                tbapiIP.Visible = true;
+                lblIP.Visible = true;
+                apiIP = tbapiIP.Text;
+            }
         }
 
         // Button abfrage Daten
         private void btnGetData_Click(object sender, EventArgs e)
         {
             // Abfrage: Ist IP Feld leer?
-            if (string.IsNullOrEmpty(tbapiIP.Text))
+            if (string.IsNullOrEmpty(apiIP))
             {
                 string message = "Bitte füge eine gültige IP-Adresse im Formular ein.";
                 string title = "Feld leer!";
@@ -36,7 +59,7 @@ namespace Wetterstation
                 try
                 {
                     // Letzte Abfrage schreiben
-                    lblInfo.Text = "Letzte Abfrage um: " + DateTime.Now.ToString("hh:mm");
+                    lblInfo.Text = "Letzte Abfrage um: " + DateTime.Now.ToString("HH:mm");
 
 
                     // Klasse von eingebundener DLL erstellen
@@ -44,7 +67,7 @@ namespace Wetterstation
 
                     // Wettedaten holen - Methode aufrufen, in Objekt schreiben
 
-                    WeatherData weatherData = wetterdatenAPI.GetData(tbapiIP.Text);
+                    WeatherData weatherData = wetterdatenAPI.GetData(apiIP);
 
                     // geholte Daten in Textbox schreiben.
 
