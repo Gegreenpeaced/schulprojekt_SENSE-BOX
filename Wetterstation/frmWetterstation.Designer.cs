@@ -47,8 +47,8 @@ namespace Wetterstation
             this.tbapiIP = new System.Windows.Forms.TextBox();
             this.gbDaten = new System.Windows.Forms.GroupBox();
             this.gbInfo = new System.Windows.Forms.GroupBox();
-            this.cbDataSource = new System.Windows.Forms.ComboBox();
             this.lblIP = new System.Windows.Forms.Label();
+            this.cbDataSource = new System.Windows.Forms.ComboBox();
             this.gbDaten.SuspendLayout();
             this.gbInfo.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +69,7 @@ namespace Wetterstation
             this.lblTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTemp.Location = new System.Drawing.Point(14, 20);
             this.lblTemp.Name = "lblTemp";
-            this.lblTemp.Size = new System.Drawing.Size(80, 16);
+            this.lblTemp.Size = new System.Drawing.Size(81, 16);
             this.lblTemp.TabIndex = 2;
             this.lblTemp.Text = "Temperatur:";
             // 
@@ -79,7 +79,7 @@ namespace Wetterstation
             this.lblHum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHum.Location = new System.Drawing.Point(14, 46);
             this.lblHum.Name = "lblHum";
-            this.lblHum.Size = new System.Drawing.Size(97, 16);
+            this.lblHum.Size = new System.Drawing.Size(98, 16);
             this.lblHum.TabIndex = 3;
             this.lblHum.Text = "Luftfeuchtigkeit:";
             // 
@@ -89,7 +89,7 @@ namespace Wetterstation
             this.lblPress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPress.Location = new System.Drawing.Point(14, 72);
             this.lblPress.Name = "lblPress";
-            this.lblPress.Size = new System.Drawing.Size(63, 16);
+            this.lblPress.Size = new System.Drawing.Size(64, 16);
             this.lblPress.TabIndex = 4;
             this.lblPress.Text = "Luftdruck:";
             // 
@@ -137,9 +137,9 @@ namespace Wetterstation
             this.lblUV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUV.Location = new System.Drawing.Point(14, 98);
             this.lblUV.Name = "lblUV";
-            this.lblUV.Size = new System.Drawing.Size(65, 16);
+            this.lblUV.Size = new System.Drawing.Size(73, 16);
             this.lblUV.TabIndex = 9;
-            this.lblUV.Text = "UV-Index:";
+            this.lblUV.Text = "UV-Stärke:";
             // 
             // lblLight
             // 
@@ -147,9 +147,9 @@ namespace Wetterstation
             this.lblLight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLight.Location = new System.Drawing.Point(14, 124);
             this.lblLight.Name = "lblLight";
-            this.lblLight.Size = new System.Drawing.Size(70, 16);
+            this.lblLight.Size = new System.Drawing.Size(73, 16);
             this.lblLight.TabIndex = 10;
-            this.lblLight.Text = "Lichtfaktor:";
+            this.lblLight.Text = "Lichteinfall:";
             // 
             // tbFrmPress
             // 
@@ -184,7 +184,7 @@ namespace Wetterstation
             this.lblInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfo.Location = new System.Drawing.Point(6, 127);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(117, 16);
+            this.lblInfo.Size = new System.Drawing.Size(118, 16);
             this.lblInfo.TabIndex = 14;
             this.lblInfo.Text = "Letzte Abfrage um:";
             // 
@@ -194,7 +194,7 @@ namespace Wetterstation
             this.lblapiApi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblapiApi.Location = new System.Drawing.Point(6, 19);
             this.lblapiApi.Name = "lblapiApi";
-            this.lblapiApi.Size = new System.Drawing.Size(83, 16);
+            this.lblapiApi.Size = new System.Drawing.Size(84, 16);
             this.lblapiApi.TabIndex = 15;
             this.lblapiApi.Text = "Datenquelle:";
             // 
@@ -238,6 +238,16 @@ namespace Wetterstation
             this.gbInfo.TabStop = false;
             this.gbInfo.Text = "Einstellungen:";
             // 
+            // lblIP
+            // 
+            this.lblIP.AutoSize = true;
+            this.lblIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIP.Location = new System.Drawing.Point(6, 47);
+            this.lblIP.Name = "lblIP";
+            this.lblIP.Size = new System.Drawing.Size(23, 16);
+            this.lblIP.TabIndex = 17;
+            this.lblIP.Text = "IP:";
+            // 
             // cbDataSource
             // 
             this.cbDataSource.FormattingEnabled = true;
@@ -249,16 +259,6 @@ namespace Wetterstation
             this.cbDataSource.Size = new System.Drawing.Size(129, 21);
             this.cbDataSource.TabIndex = 16;
             this.cbDataSource.SelectedIndexChanged += new System.EventHandler(this.cbDataSourceIndexChange);
-            // 
-            // lblIP
-            // 
-            this.lblIP.AutoSize = true;
-            this.lblIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIP.Location = new System.Drawing.Point(6, 47);
-            this.lblIP.Name = "lblIP";
-            this.lblIP.Size = new System.Drawing.Size(22, 16);
-            this.lblIP.TabIndex = 17;
-            this.lblIP.Text = "IP:";
             // 
             // frmWetterstation
             // 
