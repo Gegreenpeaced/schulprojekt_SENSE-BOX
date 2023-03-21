@@ -1,2 +1,2 @@
-# schulprojekt_OPENSENSE
-Schulprojekt Opensense
+# schulprojekt_SenseBox
+Schulprojekt SenseBox
