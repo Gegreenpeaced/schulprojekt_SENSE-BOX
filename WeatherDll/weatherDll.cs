@@ -22,7 +22,7 @@ namespace WeatherDll
         public float Beleuchtungsstaerke;
     }
     
-    public class mainPrgDll
+    public class weatherDll
     {
 
         public Bitmap GetPicture(string PictureURL)

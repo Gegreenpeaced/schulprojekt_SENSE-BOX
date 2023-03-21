@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DllExp.cs" />
-    <Compile Include="mainPrgDll.cs" />
+    <Compile Include="weatherDll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
