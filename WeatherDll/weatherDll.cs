@@ -38,9 +38,6 @@ namespace WeatherDll
                     // Erstellen einer ReturnBitmap und Laden aus Datei
                     Bitmap returnBMP = new Bitmap("liveview.bmp");
 
-                    // löschen der Datei
-                    File.Delete("liveview.bmp");
-
                     // Datei zurücksenden
                     return returnBMP;
                 }
