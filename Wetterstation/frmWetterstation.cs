@@ -82,8 +82,11 @@ namespace Wetterstation
                     tbFrmTemp.Text = weatherData.Temperatur.ToString() + " °C";
                     tbFrmUV.Text = weatherData.UVStrahlung.ToString() + " µW/cm";
 
+                    // Bitmap erstellen
+                    Bitmap liveview = new Bitmap(wetterdatenAPI.GetPicture(pictureIP));
+
                     // Daten in PictureBox schreiben
-                    pbLivePicture.Image = wetterdatenAPI.GetPicture(pictureIP);
+                    pbLivePicture.Image = liveview;
 
                 }
                 // Catch für geworfene DLL Fehler usw.
