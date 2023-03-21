@@ -62,7 +62,7 @@ namespace Wetterstation
 
 
                     // Klasse von eingebundener DLL erstellen
-                    mainPrgDll wetterdatenAPI = new mainPrgDll();
+                    weatherDll wetterdatenAPI = new weatherDll();
 
                     // Wettedaten holen - Methode aufrufen, in Objekt schreiben
 
