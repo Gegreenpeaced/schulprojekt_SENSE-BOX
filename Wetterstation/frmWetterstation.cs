@@ -15,6 +15,7 @@ namespace Wetterstation
     {
         // Variablen Initialisierung
         public string apiIP;
+        public string pictureIP;
 
         // Formularkonstruktor
         public frmWetterstation()
@@ -36,6 +37,7 @@ namespace Wetterstation
                 tbapiIP.Visible = false;
                 lblIP.Visible = false;
                 apiIP = "http://api.norku.de/api/v1/senseBox/weather";
+                pictureIP = "http://api.norku.de/api/v1/senseBox/liveview";
             }
             if(cbDataSource.SelectedIndex == 1)
             {
@@ -79,6 +81,9 @@ namespace Wetterstation
                     tbFrmPress.Text = weatherData.Luftdruck.ToString() + " hPa";
                     tbFrmTemp.Text = weatherData.Temperatur.ToString() + " °C";
                     tbFrmUV.Text = weatherData.UVStrahlung.ToString() + " µW/cm";
+
+                    // Daten in PictureBox schreiben
+                    pbLivePicture.Image = wetterdatenAPI.GetPicture(pictureIP);
 
                 }
                 // Catch für geworfene DLL Fehler usw.

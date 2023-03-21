@@ -49,8 +49,10 @@ namespace Wetterstation
             this.gbInfo = new System.Windows.Forms.GroupBox();
             this.lblIP = new System.Windows.Forms.Label();
             this.cbDataSource = new System.Windows.Forms.ComboBox();
+            this.pbLivePicture = new System.Windows.Forms.PictureBox();
             this.gbDaten.SuspendLayout();
             this.gbInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLivePicture)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFrm1
@@ -69,7 +71,7 @@ namespace Wetterstation
             this.lblTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTemp.Location = new System.Drawing.Point(14, 20);
             this.lblTemp.Name = "lblTemp";
-            this.lblTemp.Size = new System.Drawing.Size(81, 16);
+            this.lblTemp.Size = new System.Drawing.Size(80, 16);
             this.lblTemp.TabIndex = 2;
             this.lblTemp.Text = "Temperatur:";
             // 
@@ -79,7 +81,7 @@ namespace Wetterstation
             this.lblHum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHum.Location = new System.Drawing.Point(14, 46);
             this.lblHum.Name = "lblHum";
-            this.lblHum.Size = new System.Drawing.Size(98, 16);
+            this.lblHum.Size = new System.Drawing.Size(97, 16);
             this.lblHum.TabIndex = 3;
             this.lblHum.Text = "Luftfeuchtigkeit:";
             // 
@@ -89,7 +91,7 @@ namespace Wetterstation
             this.lblPress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPress.Location = new System.Drawing.Point(14, 72);
             this.lblPress.Name = "lblPress";
-            this.lblPress.Size = new System.Drawing.Size(64, 16);
+            this.lblPress.Size = new System.Drawing.Size(63, 16);
             this.lblPress.TabIndex = 4;
             this.lblPress.Text = "Luftdruck:";
             // 
@@ -104,7 +106,7 @@ namespace Wetterstation
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(257, 253);
+            this.btnClose.Location = new System.Drawing.Point(257, 347);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(230, 23);
             this.btnClose.TabIndex = 6;
@@ -114,7 +116,7 @@ namespace Wetterstation
             // 
             // btnGetData
             // 
-            this.btnGetData.Location = new System.Drawing.Point(12, 253);
+            this.btnGetData.Location = new System.Drawing.Point(12, 347);
             this.btnGetData.Name = "btnGetData";
             this.btnGetData.Size = new System.Drawing.Size(227, 23);
             this.btnGetData.TabIndex = 7;
@@ -137,7 +139,7 @@ namespace Wetterstation
             this.lblUV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUV.Location = new System.Drawing.Point(14, 98);
             this.lblUV.Name = "lblUV";
-            this.lblUV.Size = new System.Drawing.Size(73, 16);
+            this.lblUV.Size = new System.Drawing.Size(72, 16);
             this.lblUV.TabIndex = 9;
             this.lblUV.Text = "UV-Stärke:";
             // 
@@ -147,7 +149,7 @@ namespace Wetterstation
             this.lblLight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLight.Location = new System.Drawing.Point(14, 124);
             this.lblLight.Name = "lblLight";
-            this.lblLight.Size = new System.Drawing.Size(73, 16);
+            this.lblLight.Size = new System.Drawing.Size(72, 16);
             this.lblLight.TabIndex = 10;
             this.lblLight.Text = "Lichteinfall:";
             // 
@@ -182,9 +184,9 @@ namespace Wetterstation
             // 
             this.lblInfo.AutoSize = true;
             this.lblInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfo.Location = new System.Drawing.Point(6, 127);
+            this.lblInfo.Location = new System.Drawing.Point(6, 242);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(118, 16);
+            this.lblInfo.Size = new System.Drawing.Size(117, 16);
             this.lblInfo.TabIndex = 14;
             this.lblInfo.Text = "Letzte Abfrage um:";
             // 
@@ -194,7 +196,7 @@ namespace Wetterstation
             this.lblapiApi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblapiApi.Location = new System.Drawing.Point(6, 19);
             this.lblapiApi.Name = "lblapiApi";
-            this.lblapiApi.Size = new System.Drawing.Size(84, 16);
+            this.lblapiApi.Size = new System.Drawing.Size(83, 16);
             this.lblapiApi.TabIndex = 15;
             this.lblapiApi.Text = "Datenquelle:";
             // 
@@ -207,6 +209,7 @@ namespace Wetterstation
             // 
             // gbDaten
             // 
+            this.gbDaten.Controls.Add(this.pbLivePicture);
             this.gbDaten.Controls.Add(this.tbFrmTemp);
             this.gbDaten.Controls.Add(this.lblTemp);
             this.gbDaten.Controls.Add(this.lblHum);
@@ -219,7 +222,7 @@ namespace Wetterstation
             this.gbDaten.Controls.Add(this.lblLight);
             this.gbDaten.Location = new System.Drawing.Point(12, 80);
             this.gbDaten.Name = "gbDaten";
-            this.gbDaten.Size = new System.Drawing.Size(227, 152);
+            this.gbDaten.Size = new System.Drawing.Size(227, 261);
             this.gbDaten.TabIndex = 17;
             this.gbDaten.TabStop = false;
             this.gbDaten.Text = "Daten:";
@@ -233,7 +236,7 @@ namespace Wetterstation
             this.gbInfo.Controls.Add(this.lblapiApi);
             this.gbInfo.Location = new System.Drawing.Point(257, 80);
             this.gbInfo.Name = "gbInfo";
-            this.gbInfo.Size = new System.Drawing.Size(230, 152);
+            this.gbInfo.Size = new System.Drawing.Size(230, 261);
             this.gbInfo.TabIndex = 18;
             this.gbInfo.TabStop = false;
             this.gbInfo.Text = "Einstellungen:";
@@ -244,7 +247,7 @@ namespace Wetterstation
             this.lblIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIP.Location = new System.Drawing.Point(6, 47);
             this.lblIP.Name = "lblIP";
-            this.lblIP.Size = new System.Drawing.Size(23, 16);
+            this.lblIP.Size = new System.Drawing.Size(22, 16);
             this.lblIP.TabIndex = 17;
             this.lblIP.Text = "IP:";
             // 
@@ -260,11 +263,20 @@ namespace Wetterstation
             this.cbDataSource.TabIndex = 16;
             this.cbDataSource.SelectedIndexChanged += new System.EventHandler(this.cbDataSourceIndexChange);
             // 
+            // pbLivePicture
+            // 
+            this.pbLivePicture.InitialImage = null;
+            this.pbLivePicture.Location = new System.Drawing.Point(7, 149);
+            this.pbLivePicture.Name = "pbLivePicture";
+            this.pbLivePicture.Size = new System.Drawing.Size(214, 106);
+            this.pbLivePicture.TabIndex = 14;
+            this.pbLivePicture.TabStop = false;
+            // 
             // frmWetterstation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 286);
+            this.ClientSize = new System.Drawing.Size(499, 382);
             this.Controls.Add(this.gbInfo);
             this.Controls.Add(this.gbDaten);
             this.Controls.Add(this.btnGetData);
@@ -276,6 +288,7 @@ namespace Wetterstation
             this.gbDaten.PerformLayout();
             this.gbInfo.ResumeLayout(false);
             this.gbInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLivePicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,6 +315,7 @@ namespace Wetterstation
         private System.Windows.Forms.GroupBox gbInfo;
         private System.Windows.Forms.ComboBox cbDataSource;
         private System.Windows.Forms.Label lblIP;
+        private System.Windows.Forms.PictureBox pbLivePicture;
     }
 }
 
