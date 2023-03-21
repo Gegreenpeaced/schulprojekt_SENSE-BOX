@@ -7,13 +7,19 @@ Dieses Dokument dient nur zu Unterrichtszwecken.
 
 Victoria N. Meneghel
 
+Kontaktdaten:
+
     t20nascimentovi@bszetdd.lernsax.de
 
 Julius Reiter
 
+Kontaktdaten:
+
 	t20reiterju@bszetdd.lernsax.de
 
 Markus Palme
+
+Kontaktdaten:
 
     t20palmema@bszetdd.lernsax.de
 

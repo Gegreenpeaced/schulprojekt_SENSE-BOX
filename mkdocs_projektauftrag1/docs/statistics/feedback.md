@@ -1,12 +1,9 @@
 # Feedback
 
 <figure markdown>
-  <a href="https://www.surveymonkey.com/">
-  ![Image title](qrCode.jpg){ width="300" }
-  <figcaption> surveymonkey benutzen?</figcaption>
+  <a href="www.mentimeter.com">
+  ![Image title](mentiqrcode.png){ width="300" }
+  <figcaption> Mentimeter Code 14117914 </figcaption>
   </a>
 </figure>
 
----
-
-[Impressum](legal/imprint.md){ .md-button }
