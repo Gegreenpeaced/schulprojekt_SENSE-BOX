@@ -62,19 +62,11 @@ namespace WeatherDll
             {
                 using(WebClient webClient = new WebClient())
                 {
-                    // URI für die Webclient Baseadress
-                    Uri weatherURI = new Uri(DataURL);
-
-                    // Spezifizierung der Abfrage
-                    HttpRequestMessage weatherAPIRequest = new HttpRequestMessage(HttpMethod.Get, weatherURI);
-
                     // Abfrage der URL
-                    string weatherResponse = webClient.DownloadString(weatherURI);
+                    string weatherResponse = webClient.DownloadString(DataURL);
 
                     // JSON-Response Deserialize
                     WeatherData apiresponse = JsonConvert.DeserializeObject<WeatherData>(weatherResponse);
-
-
 
                     // Light Sensor auf Gültigkeit prüfen.
                     if (apiresponse.Temperatur < -40 && apiresponse.Temperatur > 100)
@@ -89,13 +81,13 @@ namespace WeatherDll
                     }
 
                     // Hum Sensor auf Gültigkeit prüfen(Unter 0 und ü. 100)
-                    if (apiresponse.Luftfeuchtigkeit < 0 && apiresponse.Luftfeuchtigkeit > 100)
+                    if (apiresponse.Luftfeuchtigkeit < 0 && apiresponse.Luftfeuchtigkeit >= 100)
                     {
                         throw new SensorException($"Humidity Sensor gibt falschen Wert!\nWert ist:{apiresponse.Luftfeuchtigkeit}");
                     }
 
                     // UV Sensor auf Gültigkeit prüfen. (Unter 0 und ü. 100)
-                    if (apiresponse.UVStrahlung < 0 && apiresponse.UVStrahlung > 100)
+                    if (apiresponse.UVStrahlung < 0 && apiresponse.UVStrahlung >= 100)
                     {
                         throw new SensorException($"UV Sensor gibt falschen Wert!\nWert ist:{apiresponse.UVStrahlung}");
                     }
