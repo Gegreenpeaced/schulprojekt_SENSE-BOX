@@ -46,13 +46,13 @@ namespace Wetterstation
             this.lblapiApi = new System.Windows.Forms.Label();
             this.tbapiIP = new System.Windows.Forms.TextBox();
             this.gbDaten = new System.Windows.Forms.GroupBox();
+            this.pbLivePicture = new System.Windows.Forms.PictureBox();
             this.gbInfo = new System.Windows.Forms.GroupBox();
             this.lblIP = new System.Windows.Forms.Label();
             this.cbDataSource = new System.Windows.Forms.ComboBox();
-            this.pbLivePicture = new System.Windows.Forms.PictureBox();
             this.gbDaten.SuspendLayout();
-            this.gbInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLivePicture)).BeginInit();
+            this.gbInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblFrm1
@@ -227,6 +227,15 @@ namespace Wetterstation
             this.gbDaten.TabStop = false;
             this.gbDaten.Text = "Daten:";
             // 
+            // pbLivePicture
+            // 
+            this.pbLivePicture.InitialImage = null;
+            this.pbLivePicture.Location = new System.Drawing.Point(36, 149);
+            this.pbLivePicture.Name = "pbLivePicture";
+            this.pbLivePicture.Size = new System.Drawing.Size(159, 106);
+            this.pbLivePicture.TabIndex = 14;
+            this.pbLivePicture.TabStop = false;
+            // 
             // gbInfo
             // 
             this.gbInfo.Controls.Add(this.lblIP);
@@ -263,15 +272,6 @@ namespace Wetterstation
             this.cbDataSource.TabIndex = 16;
             this.cbDataSource.SelectedIndexChanged += new System.EventHandler(this.cbDataSourceIndexChange);
             // 
-            // pbLivePicture
-            // 
-            this.pbLivePicture.InitialImage = null;
-            this.pbLivePicture.Location = new System.Drawing.Point(7, 149);
-            this.pbLivePicture.Name = "pbLivePicture";
-            this.pbLivePicture.Size = new System.Drawing.Size(214, 106);
-            this.pbLivePicture.TabIndex = 14;
-            this.pbLivePicture.TabStop = false;
-            // 
             // frmWetterstation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,9 +286,9 @@ namespace Wetterstation
             this.Text = "Hauptformular";
             this.gbDaten.ResumeLayout(false);
             this.gbDaten.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLivePicture)).EndInit();
             this.gbInfo.ResumeLayout(false);
             this.gbInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLivePicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

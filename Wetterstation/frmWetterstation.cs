@@ -78,7 +78,7 @@ namespace Wetterstation
 
 
                     // Bitmap erstellen
-                    Bitmap liveview = new Bitmap(wetterdatenAPI.GetPicture(pictureIP),595,397);
+                    Bitmap liveview = new Bitmap(wetterdatenAPI.GetPicture(pictureIP),159,106);
 
                     // Daten in PictureBox schreiben
                     pbLivePicture.Image = liveview;
