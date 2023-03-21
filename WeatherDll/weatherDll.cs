@@ -29,24 +29,38 @@ namespace WeatherDll
         {
             try
             {
+                // Löscht Datei falls diese noch existiert
+                if (File.Exists("liveview.bmp"))
+                {
+                    File.Delete("liveview.bmp");
+                }
+
                 // Datei herunterladen
-                using(WebClient pictureClient = new WebClient())
+                using (WebClient pictureClient = new WebClient())
                 {
                     // Abfrage der URL und erstellen der Bitmap
                     pictureClient.DownloadFile(PictureURL, "liveview.bmp");
+                    Bitmap returnBMP = null;
 
                     // Erstellen einer ReturnBitmap und Laden aus Datei
-                    Bitmap returnBMP = new Bitmap("liveview.bmp");
+                    using (FileStream stream = new FileStream("liveview.bmp", FileMode.Open, FileAccess.Read))
+                    {
+                        using (BinaryReader reader = new BinaryReader(stream))
+                        {
+                            var memoryStream = new MemoryStream(reader.ReadBytes((int)stream.Length));
+                            returnBMP = new Bitmap(memoryStream);
+                        }
+                    }
 
                     // Datei zurücksenden
                     return returnBMP;
                 }
             }
-            catch(WebException ex)
+            catch (WebException ex)
             {
                 throw new NetworkParsingException(ex.ToString());
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new Exception(ex.ToString());
             }
