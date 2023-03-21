@@ -7,12 +7,12 @@
 + Beleuchtungsstaerke : float
 --
 + WeatherData()
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>90</x><y>370</y><w>300</w><h>190</h></coordinates><panel_attributes>SensorException
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>80</x><y>370</y><w>300</w><h>190</h></coordinates><panel_attributes>SensorException
 --
 + SensorException()
 + SensorException(ExMsg : string)
 + SensorException(ExMsg : string, inner: Exception)
-+ Helplink() : string</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>260</y><w>30</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>UMLClass</id><coordinates><x>880</x><y>230</y><w>260</w><h>190</h></coordinates><panel_attributes>mainPrgDll
++ Helplink() : string</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>260</y><w>30</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>UMLClass</id><coordinates><x>880</x><y>230</y><w>260</w><h>190</h></coordinates><panel_attributes>mainPrgDll
 --
 + mainPrgDll()
 + GetData(DataURL : string) : WeatherData</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>100</x><y>80</y><w>210</w><h>190</h></coordinates><panel_attributes>Exception
@@ -24,4 +24,4 @@
 + NetworkParsingException()
 + NetworkParsingException(ExMsg : string)
 + NetworkParsingException(ExMsg : string, inner: Exception)
-+ Helplink() : string</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>260</y><w>350</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;330;110</additional_attributes></element></diagram>
++ Helplink() : string</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>260</y><w>350</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;90;330;90;330;110</additional_attributes></element></diagram>
