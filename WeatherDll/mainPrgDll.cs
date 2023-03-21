@@ -7,6 +7,8 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
+using System.Drawing;
+using System.IO;
 
 namespace WeatherDll
 {
@@ -22,6 +24,37 @@ namespace WeatherDll
     
     public class mainPrgDll
     {
+
+        public Bitmap GetPicture(string PictureURL)
+        {
+            try
+            {
+                // Datei herunterladen
+                using(WebClient pictureClient = new WebClient())
+                {
+                    // Abfrage der URL und erstellen der Bitmap
+                    pictureClient.DownloadFile(PictureURL, "liveview.bmp");
+
+                    // Erstellen einer ReturnBitmap und Laden aus Datei
+                    Bitmap returnBMP = new Bitmap("liveview.bmp");
+
+                    // löschen der Datei
+                    File.Delete("liveview.bmp");
+
+                    // Datei zurücksenden
+                    return returnBMP;
+                }
+            }
+            catch(WebException ex)
+            {
+                throw new NetworkParsingException(ex.ToString());
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+        }
+
 
         public WeatherData GetData(string DataURL)
         {
@@ -72,9 +105,6 @@ namespace WeatherDll
                     {
                         throw new SensorException($"Humidity Sensor gibt falschen Wert!\nWert ist:{apiresponse.Beleuchtungsstaerke}");
                     }
-
-
-
                     // Objekt Return
                     return apiresponse;
                 }
