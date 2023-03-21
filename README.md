@@ -1,2 +1,2 @@
-# schulprojekt_SENSE
+# schulprojekt_SENSEBox
 Schulprojekt senseBox:home
