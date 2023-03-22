@@ -4,6 +4,7 @@ Für die Durchführung benötigt ihr folgende Hilfsmittel:
 
 - [Vorlage 1](https://github.com/Gegreenpeaced/schulprojekt_SENSE-BOX/releases/download/r1.0.0/vorlage1.zip)
 - [Vorlage 2](https://github.com/Gegreenpeaced/schulprojekt_SENSE-BOX/releases/download/r1.0.0/vorlage1.zip)
+- [Aufgaben als PDF Datei](https://github.com/Gegreenpeaced/schulprojekt_SENSE-BOX/releases/download/r1.0.0/Aufgabenstellung.pdf)
 - PC mit SW-Images B5/A203 
 
 ### Generelle Information:
