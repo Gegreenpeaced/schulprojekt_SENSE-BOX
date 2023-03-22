@@ -4,7 +4,7 @@
 
 ## Ziel
 
-In dieser Unterrichtseinheit werden die Lehrplaninhalte [LB 13.6 und 13.7](https://www.schulportal.sachsen.de/lplandb/index.php?lplanid=207&lplansc=RsQZwe8OPkpHBsQONmot&token=cc0766485c53239aace2750645fd4362) mithilfe der OPENSENSE Wetterstation, dabei auch der Umgang mit DLLs und OPP in der Praxis umgesetzt. 
+In dieser Unterrichtseinheit werden die Lehrplaninhalte [LB 13.6 und 13.7](https://www.schulportal.sachsen.de/lplandb/index.php?lplanid=207&lplansc=RsQZwe8OPkpHBsQONmot&token=cc0766485c53239aace2750645fd4362) mithilfe der Sense-Box Wetterstation, dabei auch der Umgang mit DLLs und OPP in der Praxis umgesetzt. 
 
 Das Ziel dabei ist, diese Lerninhalte zu wiederholen und dabei für die Prüfung zu üben. 
 
