@@ -4,4 +4,4 @@
 C:\Users\bgyb>pip --proxy http://kjs-03.lan.dd-schulen.de:3128 install mkdocs mkdocs-material 
 C:\Users\bgyb>pip --proxy http://kjs-03.lan.dd-schulen.de:3128 install mkdocs mkdocs-encryptcontent-plugin
 // cd Ordener, wo die mkdocs_projektauftrag1 herunterladen ist 
-D:\mkDocs\mkdocs_projektauftrag1>C:\Users\nascimentovi\AppData\Roaming\Python\Python310\Scripts\mkdocs.exe serve
+D:\mkDocs\mkdocs_projektauftrag1>C:\Users\bgyb\AppData\Roaming\Python\Python310\Scripts\mkdocs.exe serve
